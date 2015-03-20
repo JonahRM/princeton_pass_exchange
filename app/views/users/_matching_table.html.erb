@@ -1,0 +1,19 @@
+ <h1>Here are your matches</h1>
+    <table class="table table-hover">
+      <tr>
+        <th>Contact</th>
+        <th>What they have that you want</th>
+        <th>What you have that they want</th>
+
+      <% current_user.matching_passes.each do |matching_pass| %>
+      <tr>
+        <td><%=matching_pass.owner.email%></td>
+        <td><%=matching_pass.event.details%></td>
+        <td><%matching_pass.events_they_want(current_user).each do |event|%>
+              <%=event.details%><br>
+              <%end%>
+        </td>
+       <tr>
+      <% end %>
+
+    </table>

@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+Welcome, <%=current_user.name%>
+</p>
+<%=render 'matching_table'%>
+<%if current_user.officer?%>
+<%=link_to "Add an Event for your club", new_event_url%>
+<%end%>
+<%=render 'event_table'%>
+
+

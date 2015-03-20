@@ -1,0 +1,27 @@
+<%= form_for(@pass) do |f| %>
+  <% if @pass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pass.errors.count, "error") %> prohibited this pass from being saved:</h2>
+
+      <ul>
+      <% @pass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :event_id, :value=>params[:event_id] %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value=>current_user.id %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class=>"btn btn-default" %>
+  </div>
+<% end %>

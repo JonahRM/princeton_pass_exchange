@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @pass.event_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @pass.user_id %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @pass.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_pass_path(@pass) %> |
+<%= link_to 'Back', passes_path %>
